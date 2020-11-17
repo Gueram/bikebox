@@ -22,6 +22,6 @@ Boxbike.destroy_all
     address: Faker::Address.street_name,
     capacity: [1, 2, 3, 4, 5].sample,
     price: [10, 20, 30, 40, 50].sample,
-    user: User.all.sample 
+    user: User.all.sample
     )
 end
