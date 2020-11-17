@@ -5,4 +5,9 @@
       <li> <%= boxbike.address %><%= " | " %><%= link_to boxbike.user.name, boxbike_path(boxbike) %></li>
     <% end %>
   </ul>
+  <h3>Have a box to rent ?</h3>
+  <%= link_to "create your box", new_boxbike_path %>
+  <br>
+  <%= link_to "Back to Home", root_path  %>
+
 </div>
