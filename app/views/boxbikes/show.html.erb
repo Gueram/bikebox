@@ -1,0 +1,13 @@
+<ul>
+  <li><%= @boxbike.user.name %></li>
+  <li><%= @boxbike.address %></li>
+  <li><%= @boxbike.capacity %></li>
+  <li><%= @boxbike.price %></li>
+  <% if @boxbike.charge_option%>
+  <li> Electrical plug </li>
+  <% else %>
+  <li> No electricity </li>
+  <% end  %>
+</ul>
+
+<%= link_to "Rent", root_path  %>
