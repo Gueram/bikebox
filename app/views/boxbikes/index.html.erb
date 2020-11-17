@@ -2,7 +2,7 @@
   <h1>List of all boxes</h1>
   <ul>
     <% @boxbikes.each do |boxbike| %>
-      <li> <%= boxbike.address %><%= " | " %><%= boxbike.user.name %></li>
+      <li> <%= boxbike.address %><%= " | " %><%= link_to boxbike.user.name, boxbike_path(boxbike) %></li>
     <% end %>
   </ul>
 </div>
