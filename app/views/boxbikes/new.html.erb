@@ -1,0 +1,9 @@
+<h2>Offer a Boxbike</h2>
+
+<%= simple_form_for [ @user, @boxbike ] do |f| %>
+  <%= f.input :address %>
+  <%= f.input :capacity %>
+  <%= f.input :charge_option %>
+  <%= f.input :price %>
+  <%= f.submit “Submit”, class: “btn btn-primary” %>
+<% end %>
