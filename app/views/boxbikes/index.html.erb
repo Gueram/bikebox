@@ -1,6 +1,8 @@
-<h1>Index</h1>
-<ul>
-  <% @boxbikes.each do |boxbike| %>
-    <li><%= boxbike.address %></li>
-  <% end %>
-</ul>
+<div class="container">
+  <h1>List of all boxes</h1>
+  <ul>
+    <% @boxbikes.each do |boxbike| %>
+      <li> <%= boxbike.address %><%= " | " %><%= link_to boxbike.user.name, boxbike_path(boxbike) %></li>
+    <% end %>
+  </ul>
+</div>
