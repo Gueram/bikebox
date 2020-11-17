@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Boxbike details</h1>
+  <ul>
+    <li><%= "renter's name: " %><%= @boxbike.user.name %> </li>
+    <li><%= "box address: " %><%= @boxbike.address %></li>
+    <li><%= "capacity: " %><%= @boxbike.capacity %></li>
+    <li><%= "price: " %><%= @boxbike.price %></li>
+    <li> <% if @boxbike.charge_option%>
+         <%= "electricity available" %>
+         <% else %>
+         <%= "No electricity" %>
+         <% end %>
+  </ul>
+</div>
