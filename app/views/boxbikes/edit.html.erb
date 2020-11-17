@@ -1,0 +1,12 @@
+<h1>Edit / Update your Boxbike</h1>
+
+<%= simple_form_for [ @user, @boxbike ] do |f| %>
+  <%= f.input :address %>
+  <%= f.input :capacity %>
+  <%= f.input :charge_option %>
+  <%= f.input :price %>
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
+
+<%#= link_to 'Show', @boxbike %>
+<%= link_to 'Back', boxbike_path %>

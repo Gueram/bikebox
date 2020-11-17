@@ -23,6 +23,20 @@ skip_before_action :authenticate_user!, only: :index
     @boxbike = Boxbike.find(params[:id])
   end
 
+  def edit
+    @boxbike = Boxbike.find(params[:id])
+  end
+
+  def update
+    @boxbike = Boxbike.find(params[:id])
+    if @boxbike.update(boxbike_params)
+      redirect_to boxbike_path
+    else
+      render :edit
+    end
+  end
+
+
   private
 
   def boxbike_params
