@@ -3,7 +3,6 @@ skip_before_action :authenticate_user!, only: :index
 
   def index
     @boxbikes = policy_scope(Boxbike).order(created_at: :desc)
-    authorize @boxbikes
   end
 
   def new
@@ -45,9 +44,9 @@ skip_before_action :authenticate_user!, only: :index
 
   def destroy
     @boxbike = Boxbike.find(params[:id])
+    authorize @boxbike
     @boxbike.destroy
     redirect_to boxbikes_path
-    authorize @boxbike
   end
 
   private
