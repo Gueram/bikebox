@@ -17,7 +17,6 @@ class ContractsController < ApplicationController
     @contract.user = current_user
     authorize @contract
     if @contract.save
-      @contract.status = true
       redirect_to boxbike_contracts_path(@boxbike)
     else
       redirect_to boxbike_path(@boxbike)

@@ -4,7 +4,6 @@
     <% @contracts.each do |contract| %>
       <li>contract <%= contract.id %>
         <%= link_to "Cancel", contract_path(contract), method: :delete, data: { confirm: "Are you sure?" } %>
-        <br> <%= contract.status %>
       </li>
     <% end %>
 

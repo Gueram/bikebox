@@ -4,7 +4,9 @@
     <li><%= "renter's name: " %><%= @boxbike.user.name %> </li>
     <li><%= "box address: " %><%= @boxbike.address %></li>
     <li><%= "capacity: " %><%= @boxbike.capacity %></li>
-    <li><%= "price: " %><%= @boxbike.price %></li>
+    <li>spots left :<%= @boxbike.spots_left %></li>
+    <li><%= " Total price of box: " %><%= @boxbike.price %></li>
+    <li>Price per spot : </li>
     <li> <% if @boxbike.charge_option%>
          <%= "electricity available" %>
          <% else %>
