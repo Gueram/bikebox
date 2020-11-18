@@ -16,7 +16,11 @@
   <br>
   <%= link_to "Back to Home", root_path  %> |
   <br>
-  <%= link_to "Edit", edit_boxbike_path(@boxbike)  %>
+  <% if policy(@boxbike).edit? %>
+    <%= link_to "Edit", edit_boxbike_path(@boxbike)  %>
+  <% end %>
   <br>
+  <% if policy(@boxbike).destroy? %>
   <%= link_to "Delete", boxbike_path(@boxbike), method: :delete, data: { confirm: "Are you sure?"} %>
+  <% end %>
 </div>

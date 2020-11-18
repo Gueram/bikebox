@@ -2,16 +2,19 @@ class BoxbikesController < ApplicationController
 skip_before_action :authenticate_user!, only: :index
 
   def index
-    @boxbikes = Boxbike.all
+    @boxbikes = policy_scope(Boxbike).order(created_at: :desc)
+    authorize @boxbikes
   end
 
   def new
     @boxbike = Boxbike.new
+    authorize @boxbike
   end
 
   def create
     @boxbike = Boxbike.new(boxbike_params)
     @boxbike.user = current_user
+    authorize @boxbike
     if @boxbike.save
       redirect_to boxbike_path(@boxbike)
     else
@@ -21,14 +24,17 @@ skip_before_action :authenticate_user!, only: :index
 
   def show
     @boxbike = Boxbike.find(params[:id])
+    authorize @boxbike
   end
 
   def edit
     @boxbike = Boxbike.find(params[:id])
+    authorize @boxbike
   end
 
   def update
     @boxbike = Boxbike.find(params[:id])
+    authorize @boxbike
     if @boxbike.update(boxbike_params)
       redirect_to boxbike_path
     else
@@ -40,6 +46,7 @@ skip_before_action :authenticate_user!, only: :index
     @boxbike = Boxbike.find(params[:id])
     @boxbike.destroy
     redirect_to boxbikes_path
+    authorize @boxbike
   end
 
   private
