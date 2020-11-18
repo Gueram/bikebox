@@ -22,7 +22,6 @@ class ContractsController < ApplicationController
   end
   def destroy
     @contract = Contract.find(params[:id])
-    @boxbike = @contract.boxbike
     @contract.destroy
     redirect_to boxbike_path(@boxbike)
   end
