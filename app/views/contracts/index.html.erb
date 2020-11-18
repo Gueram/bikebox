@@ -1,1 +1,16 @@
-<h1>Salut</h1>
+<div class="container">
+  <h1>List of all contracts</h1>
+  <ul>
+    <li>contract 1</li>
+    <li>contract 1</li>
+    <li>contract 1</li>
+    <li>contract 1</li>
+    <%# @contracts.each do |contract| %>
+
+      <!-- <li> <%#= link_to boxbike.address, boxbike_path(boxbike) %><%= " | " %><%#= link_to boxbike.user.name, boxbike_path(boxbike) %></li> -->
+    <%# end %>
+  </ul>
+  <%= link_to "Add another box", new_boxbike_path %>
+  <br>
+  <%= link_to "Back to Home", root_path  %>
+</div>
