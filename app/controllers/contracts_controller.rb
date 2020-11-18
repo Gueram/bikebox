@@ -23,9 +23,15 @@ class ContractsController < ApplicationController
       flash[:notice] = "Warning, your rental didn't go through, please review the form."
     end
   end
+  def destroy
+    @contract = Contract.find(params[:id])
+    @contract.destroy
+    redirect_to boxbike_path(@boxbike)
+  end
 
   private
   def contract_params
     params.require(:contract).permit(:start_date, :end_date, :number_bikes, :status)
   end
+
 end
