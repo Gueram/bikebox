@@ -4,6 +4,11 @@ class ContractsController < ApplicationController
   end
 
   def create
-    
+
   end
+
+  def index
+    @contracts = Contract.all
+  end
+
 end
