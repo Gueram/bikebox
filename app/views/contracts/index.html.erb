@@ -9,6 +9,8 @@
       <!-- <li> <%#= link_to boxbike.address, boxbike_path(boxbike) %><%= " | " %><%#= link_to boxbike.user.name, boxbike_path(boxbike) %></li> -->
     <%# end %>
   </ul>
+  <%= link_to "Back to boxbike", boxbike_path(@boxbike)  %>
+  <br>
   <%= link_to "Add another box", new_boxbike_path %>
   <br>
   <%= link_to "Back to Home", root_path  %>
