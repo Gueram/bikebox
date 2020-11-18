@@ -9,7 +9,7 @@
          <%= "electricity available" %>
          <% else %>
          <%= "No electricity" %>
-         <% end %>   
+         <% end %>
   </ul>
   <br>
   <h2>rent this box</h2>
@@ -28,5 +28,4 @@
   <br>
   <%= link_to "Delete", boxbike_path(@boxbike), method: :delete, data: { confirm: "Are you sure?"} %>
   <br>
-  <%#= link_to "Remove", contract_path(contract), method: :delete, data: { confirm: "Are you sure?" } %>
 </div>

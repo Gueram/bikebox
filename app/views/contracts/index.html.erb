@@ -1,11 +1,12 @@
 <div class="container">
   <h1>List of all contracts</h1>
   <ul>
+    <li><% @contracts.each do |contract| %></li>
     <li>contract 1</li>
     <li>contract 1</li>
     <li>contract 1</li>
     <li>contract 1</li>
-    <%# @contracts.each do |contract| %>
+    <% end %>
 
       <!-- <li> <%#= link_to boxbike.address, boxbike_path(boxbike) %><%= " | " %><%#= link_to boxbike.user.name, boxbike_path(boxbike) %></li> -->
     <%# end %>
@@ -13,4 +14,6 @@
   <%= link_to "Add another box", new_boxbike_path %>
   <br>
   <%= link_to "Back to Home", root_path  %>
+  <br>
+  <%= link_to "Cancel", contract_path(@contract), method: :delete, data: { confirm: "Are you sure?" } %>
 </div>

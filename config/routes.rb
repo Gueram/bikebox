@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :boxbikes do
     resources :contracts, only: [ :index, :new, :create ]
   end
+  resources :contracts, only: [ :destroy ]
 end
 
 
