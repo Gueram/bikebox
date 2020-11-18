@@ -32,5 +32,6 @@
   <br>
   <% if policy(@boxbike).destroy? %>
   <%= link_to "Delete", boxbike_path(@boxbike), method: :delete, data: { confirm: "Are you sure?"} %>
+  <br>
   <% end %>
 </div>

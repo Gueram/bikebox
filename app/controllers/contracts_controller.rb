@@ -18,16 +18,23 @@ class ContractsController < ApplicationController
     authorize @contract
     if @contract.save
       @contract.status = true
-      raise
       redirect_to boxbike_contracts_path(@boxbike)
     else
       redirect_to boxbike_path(@boxbike)
       flash[:notice] = "Warning, your rental didn't go through, please review the form."
     end
   end
+  def destroy
+    @contract = Contract.find(params[:id])
+    authorize @contract
+    @boxbike = @contract.boxbike
+    @contract.destroy
+    redirect_to boxbike_contracts_path(@boxbike)
+  end
 
   private
   def contract_params
     params.require(:contract).permit(:start_date, :end_date, :number_bikes, :status)
   end
+
 end

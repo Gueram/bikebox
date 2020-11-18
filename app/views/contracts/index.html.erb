@@ -2,14 +2,19 @@
   <h1>List of all contracts</h1>
   <ul>
     <% @contracts.each do |contract| %>
-     <li> <%= link_to contract.boxbike.address, boxbike_contracts_path(@boxbike) %><%= " | " %><%= link_to contract.boxbike.user.name, boxbike_contracts_path(@boxbike) %></li>
-     <br> <%= contract.status %>
+      <li>contract <%= contract.id %>
+        <%= link_to "Cancel", contract_path(contract), method: :delete, data: { confirm: "Are you sure?" } %>
+        <br> <%= contract.status %>
+      </li>
     <% end %>
+
+      <!-- <li> <%#= link_to boxbike.address, boxbike_path(boxbike) %><%= " | " %><%#= link_to boxbike.user.name, boxbike_path(boxbike) %></li> -->
+    <%# end %>
   </ul>
-  <br>
-  <%= link_to "Back to boxes list", boxbikes_path %>
+  <%= link_to "Back to boxbike", boxbike_path(@boxbike)  %>
   <br>
   <%= link_to "Add another box", new_boxbike_path %>
   <br>
   <%= link_to "Back to Home", root_path  %>
+  <br>
 </div>
