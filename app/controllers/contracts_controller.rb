@@ -1,14 +1,22 @@
 class ContractsController < ApplicationController
+  def index
+    @contracts = Contract.all
+  end
+
   def new
-    @contract = Contract.new
   end
 
   def create
-
-  end
-
-  def index
-    @contracts = Contract.all
+    @contract = Contract.new(contract_params)
+    @boxbike = Boxbike.find(params[:boxbike_id])
+    @contract.boxbike = @boxbike
+    @contract.user = current_user
+    if @contract.save
+      redirect_to boxbike_path(@boxbike)
+    else
+      redirect_to boxbike_path(@boxbike)
+      flash[:notice] = "Attention, le contrat n'est pas créé"
+    end
   end
 
   def destroy
@@ -16,6 +24,11 @@ class ContractsController < ApplicationController
     @boxbike = @contract.boxbike
     @contract.destroy
     redirect_to boxbike_path(@boxbike)
+  end
+
+  private
+  def contract_params
+    params.require(:contract).permit(:start_date, :end_date, :number_bikes, :status)
   end
 
 end
