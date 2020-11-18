@@ -11,6 +11,10 @@
          <%= "No electricity" %>
          <% end %>
   </ul>
-</div>
 
-<%= link_to "Rent", root_path  %> | <%= link_to "Edit", edit_boxbike_path(@boxbike)  %>
+  <%= link_to "Back to boxes list", boxbikes_path %> |
+  <br>
+  <%= link_to "Back to Home", root_path  %> |
+  <br>
+  <%= link_to "Edit", edit_boxbike_path(@boxbike)  %>
+</div>
