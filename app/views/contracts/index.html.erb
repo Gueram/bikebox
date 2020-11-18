@@ -3,8 +3,12 @@
   <ul>
     <% @contracts.each do |contract| %>
      <li> <%= link_to contract.boxbike.address, boxbike_contracts_path(@boxbike) %><%= " | " %><%= link_to contract.boxbike.user.name, boxbike_contracts_path(@boxbike) %></li>
+     <br> <%= contract.status %>
     <% end %>
   </ul>
+  <br>
+  <%= link_to "Back to boxes list", boxbikes_path %>
+  <br>
   <%= link_to "Add another box", new_boxbike_path %>
   <br>
   <%= link_to "Back to Home", root_path  %>
