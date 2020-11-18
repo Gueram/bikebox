@@ -9,8 +9,16 @@
          <%= "electricity available" %>
          <% else %>
          <%= "No electricity" %>
-         <% end %>
+         <% end %>   
   </ul>
+  <br>
+  <h2>rent this box</h2>
+  <%= simple_form_for [ @boxbike, @contract ] do |f| %>
+    <%= f.input :start_date %>
+    <%= f.input :end_date %>
+    <%= f.input :number_bikes %>
+    <%= f.submit 'Submit', class: 'btn btn-primary' %>
+  <% end %>
 
   <%= link_to "Back to boxes list", boxbikes_path %> |
   <br>

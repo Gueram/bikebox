@@ -21,6 +21,7 @@ skip_before_action :authenticate_user!, only: :index
 
   def show
     @boxbike = Boxbike.find(params[:id])
+    @contract = Contract.new
   end
 
   def edit
