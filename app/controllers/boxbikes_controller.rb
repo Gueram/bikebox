@@ -37,6 +37,11 @@ skip_before_action :authenticate_user!, only: :index
     end
   end
 
+  def destroy
+    @boxbike = Boxbike.find(params[:id])
+    @boxbike.destroy
+    redirect_to boxbikes_path
+  end
 
   private
 
