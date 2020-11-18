@@ -2,10 +2,12 @@ class ContractsController < ApplicationController
   def index
     @boxbike = Boxbike.find(params[:boxbike_id])
     @contracts = @boxbike.contracts
+    @contracts = policy_scope(Contract).order(created_at: :desc)
   end
 
   def new
     @contract = Contract.new(contract_params)
+    authorize @contract
   end
 
   def create
@@ -13,6 +15,7 @@ class ContractsController < ApplicationController
     @boxbike = Boxbike.find(params[:boxbike_id])
     @contract.boxbike = @boxbike
     @contract.user = current_user
+    authorize @contract
     if @contract.save
       redirect_to boxbike_contracts_path(@boxbike)
     else
