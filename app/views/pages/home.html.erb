@@ -8,7 +8,7 @@
     <div class="search-form-control form-group">
       <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Enter address" />
       <button name="button" type="submit" class="btn btn-flat">
-        <i class="fas fa-search mr-2"></i> Search
+        <i class="fas fa-search mr-2 mt-2"></i> Search
       </button>
     </div>
     <% end %>
@@ -16,11 +16,27 @@
 </div>
 <div class="container" class="home-content">
   <div class="row justify-content-center">
-    <div class="row"></div>
-      <div class="col-sm-6">
-        <h2>Why Boxbike ?</h2>
+    <div>
+      <div class="align-self-center">
+        <h2>Why Bikebox ?</h2>
+        <p>Finding the <span style="background-color:#00b4d8; color: white">perfect</span> spot to park your bike in the city is a real pain.
+        We are bike commuters like you and we decided it was time to <span style="background-color:#00b4d8; color: white">stop</span> parking our bikes in unsafe places.
+        Less and less people own cars thus the number of empty boxes available grow each day, so why not use that space to park our <span style="background-color:#00b4d8; color: white">rides</span> ?</p>
       </div>
-    <div class="row"></div>
-    <div class="row"></div>
+      </div>
+      <div class="d-inline">
+        <div class="d-flex">
+          <h2>Don't be this guy</h2>
+          <%= image_tag 'bike-lamp.jpg', alt:'bike-lamp', width:'50%' %>
+        </div>
+        <div class="d-flex">
+          <%= image_tag 'kim.gif', alt:'kim-gif', width:'50%' %>
+          <h2>Want to make money ?</h2><br>
+          <p>Bikebox lets you easily rent your box to bikers to get that sweet <span style="background-color:#00b4d8; color: white">moula</span>.
+            Just sign-in, enter the address of the box and its details and you're ready to roll></p>
+        </div>
+      </div>
+      <br>
+    <%= link_to "See our boxes to rent", boxbikes_path, class: "btn btn-flat" %>
   </div>
 </div>
