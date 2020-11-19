@@ -1,7 +1,6 @@
 <div class="container">
-
-<div class="index-content d-flex">
-  <div class="col-6">
+  <div class="index-content d-flex">
+    <div class="col-6">
       <% @boxbikes.each do |boxbike| %>
           <div class="card-product">
               <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
@@ -12,12 +11,11 @@
             </div>
       <% end %>
   </div>
-   <div id="map-index" class="col-6"
+   <div id="map" class="col-6"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
  </div>
-
 </div>
 
 
