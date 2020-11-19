@@ -42,9 +42,11 @@ skip_before_action :authenticate_user!, only: :index
         to:   contract.end_date
       }
     end
+
     @markers = [{
       lat: @boxbike.latitude,
-      lng: @boxbike.longitude
+      lng: @boxbike.longitude,
+      image_url: helpers.asset_url('marker.png')
     }]
   end
 
