@@ -25,6 +25,13 @@ skip_before_action :authenticate_user!, only: :index
     @boxbike = Boxbike.find(params[:id])
     authorize @boxbike
     @contract = Contract.new
+    @contracts = Contract.where(boxbike_id: @boxbike.id)
+    @contracts_dates = @contracts.map do |contract|
+      {
+        from: contract.start_date,
+        to:   contract.end_date
+      }
+    end
   end
 
   def edit
