@@ -3,9 +3,14 @@
 
   <%= simple_form_for [ @user, @boxbike ] do |f| %>
     <%= f.input :address %>
-    <%= f.input :capacity %>
-    <%= f.input :charge_option %>
-    <%= f.input :price %>
+    <%= f.label :capacity %>
+    <%= f.number_field :capacity %>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+    <br>
+    <strong><%= f.label :charge_option, "Does your Bikebox have an electric charger?:" %></strong>
+    <%= f.select :charge_option, ["No", "Yes"] %>
+    <br>
     <%= f.submit 'Submit', class: 'btn btn-primary' %>
   <% end %>
   <br>
@@ -13,3 +18,5 @@
   <br>
   <%= link_to "Back to Home", root_path  %>
 </div>
+
+
