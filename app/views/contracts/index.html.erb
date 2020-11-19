@@ -2,9 +2,10 @@
   <h1>List of all contracts</h1>
   <ul>
     <% @contracts.each do |contract| %>
-    <li>contract <%= contract.id %>
-  <%= link_to "Cancel", contract_path(contract), method: :delete, data: { confirm: "Are you sure?" } %>
-    </li><% end %>
+      <li>contract <%= contract.id %>
+        <%= link_to "Cancel", contract_path(contract), method: :delete, data: { confirm: "Are you sure?" } %>
+      </li>
+    <% end %>
 
       <!-- <li> <%#= link_to boxbike.address, boxbike_path(boxbike) %><%= " | " %><%#= link_to boxbike.user.name, boxbike_path(boxbike) %></li> -->
     <%# end %>
