@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Boxbike details</h1>
+  <h1>Bikebox details</h1>
   <ul>
     <li><%= "renter's name: " %><%= @boxbike.user.name %> </li>
     <li><%= "box address: " %><%= @boxbike.address %></li>
@@ -19,28 +19,39 @@
           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div></li>
   </ul>
+
+<div>
+  <div class="container">
+    <div class="form-wrapper">
+      <h2>Book a bikebox</h2>
+      <%= simple_form_for [ @boxbike, @contract ] do |f| %>
+        <%= f.input  :start_date, label: "Select your dates:", as: :string, required: false, input_html: {id: "range_start", class: "d-none"} %>
+        <%= f.input  :end_date, label: false, as: :string, required: false, input_html: {id: "range_end", class: "d-none"} %>
+        <%= f.input :number_bikes %>
+        <%= f.submit 'Submit', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
   
-  <br>
-  <h2>rent this box</h2>
-  <%= simple_form_for [ @boxbike, @contract ] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :number_bikes %>
-    <%= f.submit 'Submit', class: 'btn btn-primary' %>
-  <% end %>
-
-  <%= link_to "Back to boxes list", boxbikes_path %> |
-  <br>
-  <%= link_to "Back to Home", root_path  %> |
-  <br>
-
-  <% if policy(@boxbike).edit? %>
-    <%= link_to "Edit your Boxbike", edit_boxbike_path(@boxbike)  %>
-  <% end %>
-
-  <br>
-  <% if policy(@boxbike).destroy? %>
-  <%= link_to "Delete", boxbike_path(@boxbike), method: :delete, data: { confirm: "Are you sure?"} %>
-  <br>
-  <% end %>
+<div
+  id="contract-form-div"
+  data-contracts="<%= @contracts_dates.to_json %>">
+<div>
+  <div>
+    <%= link_to "Back to boxes list", boxbikes_path %>
+    <br>
+    <%= link_to "Back to Home", root_path  %>
+    <br>
+    <% if policy(@boxbike).edit? %>
+      <%= link_to "Edit your Bikebox", edit_boxbike_path(@boxbike)  %>
+    <% end %>
+    <br>
+    <% if policy(@boxbike).destroy? %>
+    <%= link_to "Delete", boxbike_path(@boxbike), method: :delete, data: { confirm: "Are you sure?"} %>
+    <br>
+    <% end %>
+    <br>
+  </div>
+</div>
 </div>

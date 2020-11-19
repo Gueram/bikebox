@@ -1,16 +1,25 @@
-<div class="container">
-  <h1>List of all contracts</h1>
-  <ul>
+<ul class="list-inline tabs-underlined">
+  <li>
+    <a href="#" class="tab-underlined active">Reservations</a>
+  </li>
     <% @contracts.each do |contract| %>
-      <li>contract <%= contract.id %>
+      <li>contract <%= contract.start_date %>
         <%= link_to "Cancel", contract_path(contract), method: :delete, data: { confirm: "Are you sure?" } %>
       </li>
     <% end %>
 
       <!-- <li> <%#= link_to boxbike.address, boxbike_path(boxbike) %><%= " | " %><%#= link_to boxbike.user.name, boxbike_path(boxbike) %></li> -->
     <%# end %>
+  <li>
+    <a href="#" class="tab-underlined">My boxbikes</a>
+  </li>
+</ul>
+
+
+
+<div class="container">
   </ul>
-  <%= link_to "Back to boxbike", boxbike_path(@boxbike)  %>
+  <%= link_to "Back to bikebox", boxbike_path(@boxbike)  %>
   <br>
   <%= link_to "Add another box", new_boxbike_path %>
   <br>

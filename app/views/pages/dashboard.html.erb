@@ -1,0 +1,15 @@
+
+<ul class="list-inline tabs-underlined">
+  <li>
+    <a href="#" class="tab-underlined active">My Boxes</a>
+  </li>
+  <% @my_boxes.each do |boxe| %>
+    <li> <%= boxe.address %> - <%= boxe.contracts.length %> reservations </li>
+  <% end %>
+  <li>
+    <a href="#" class="tab-underlined">My Reservations</a>
+  </li>
+  <% @my_reservations.each do |reservation| %>
+    <li> <%= reservation.start_date %></li>
+  <% end %>
+</ul>

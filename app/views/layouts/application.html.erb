@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bikebox</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bikebox</title>
+    <%= csp_meta_tag %>
+    <%= csrf_meta_tags %>    
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= stylesheet_pack_tag 'application' %> <!-- ajout pour flatpickr -->
   </head>
 
   <body>
-
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-
+    <div class="main-container">
     <%= yield %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
