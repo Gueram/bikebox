@@ -1,40 +1,44 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
-  width: 500px;
-  background: #fff8c1;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 250px;
+  width: 420px;
+  background: #fee179;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.1);
   display: flex;
   align-items: center;
-  margin-bottom: 30px;
-  border-radius: 30px;
+  margin-bottom: 60px;
+  border-radius: 80px;
+  // sborder-color: #9088d4;
+  // border-style: solid;
+  // border-width: 2px;
+  margin-top: 30px;
+
 }
 
 .card-product img {
   height: 100%;
-  width: 120px;
+  width: 150px;
   object-fit: cover;
 }
 
 .card-product h2 {
-  font-size: 24px;
-  font-weight: bold;
+  font-size: 27px;
+  // font-weight: bold;
   margin: 0;
+  padding-bottom: 20px;
   a {
-    color: #c05555;
-    //font-family: 'Modak', cursive;
-    font-family: 'Abril Fatface', cursive;
+    color: white;
   }
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 17px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
   a {
-    color: #59886b;
+    color: #00b4d8;
     font-family: 'Karla', sans-serif;
   }
 }
