@@ -1,0 +1,17 @@
+.contract-card {
+  background: white;
+  margin-bottom: 5px;
+  border: thin solid $blue;
+  width: 400px;
+
+  .contract-address {
+    font-weight: bold;
+  }
+
+  .contract-date {
+    display: flex;
+    justify-content: space-around;
+  }
+
+
+}

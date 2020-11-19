@@ -25,6 +25,7 @@ require("channels")
 // External imports
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 import "../plugins/flatpickr";
 import { price } from '../plugins/price';
 
@@ -36,4 +37,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMapbox();
   price();
+  initAutocomplete();
 });
