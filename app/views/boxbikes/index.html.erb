@@ -1,46 +1,49 @@
 
 
 <div class="container">
-  <h1>List of all boxes</h1>
-  <ul>
-    <% @boxbikes.each do |boxbike| %>
-      <li> <%= link_to boxbike.address, boxbike_path(boxbike) %><%= " | " %><%= link_to boxbike.user.name, boxbike_path(boxbike) %></li>
-    <% end %>
-  </ul>
-  <h3>Have a box to rent ?</h3>
-  <% if policy(Boxbike).create? %>
-    <%= link_to "create your box", new_boxbike_path %>
-  <% end %>
+ <!--  <ul>
+    <#% @boxbikes.each do |boxbike| %>
+      <li> <%#= link_to boxbike.address, boxbike_path(boxbike) %><#%= " | " %><%#= link_to boxbike.user.name, boxbike_path(boxbike) %></li>
+    <#% end %>
+  </ul> -->
+ <!--  <h3>Have a box to rent ?</h3>
+  <%#if policy(Boxbike).create? %>
+    <%#= link_to "create your box", new_boxbike_path %>
+  <%#end %>
   <br>
-  <%= link_to "Back to Home", root_path  %>
-
-  <div id="map-index"
+  <%#= link_to "Back to Home", root_path  %>
+ -->
+ <!--  <div id="map-index" class="col-sm-6"
     style="width: 100%; height: 600px;"
     data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+    data-mapbox-api-key="<%#= ENV['MAPBOX_API_KEY'] %>">
+  </div> -->
 
-<div class="container index-content">
-  <div class="col-sm-6">
+<div class="index-content d-flex">
+  <div class="col-6">
     <h1>List of all boxes</h1>
-    <ul>
+    <!-- <ul> -->
       <% @boxbikes.each do |boxbike| %>
-        <li><div class="card-product">
+        <!-- <li> -->
+          <div class="card-product">
               <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
               <div class="card-product-infos">
                 <h2>Product name</h2>
                 <p>Product description with <strong>relevant info</strong> only.</p>
               </div>
             </div>
-         <%= link_to boxbike.address, boxbike_path(boxbike) %><%= " | " %><%= link_to boxbike.user.name, boxbike_path(boxbike) %></li>
+         <%= link_to boxbike.address, boxbike_path(boxbike) %><%= " | " %><%= link_to boxbike.user.name, boxbike_path(boxbike) %>
+       <!-- </li> -->
       <% end %>
-    </ul>
+    <!-- </ul> -->
   </div>
-  <div class="col-sm-6">
-    <h1>MAP</h1>
+   <div id="map-index" class="col-6"
+    style="width: 100%; height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
  </div>
-  
+
 </div>
 
 
