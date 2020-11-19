@@ -13,27 +13,40 @@
          <%= "No electricity" %>
          <% end %>
   </ul>
-  <br>
-  <h2>rent this box</h2>
-  <%= simple_form_for [ @boxbike, @contract ] do |f| %>
-    <%= f.input :start_date %>
-    <%= f.input :end_date %>
-    <%= f.input :number_bikes %>
-    <%= f.submit 'Submit', class: 'btn btn-primary' %>
-  <% end %>
+</div>
+<div>
+  <div class="container">
+    <div class="form-wrapper">
+      <h2>Book a bikebox</h2>
+      <%= simple_form_for [ @boxbike, @contract ] do |f| %>
+        <%= f.input  :start_date, label: "Select your dates:", as: :string, required: false, input_html: {id: "range_start", class: "d-none"} %>
+        <%= f.input  :end_date, label: false, as: :string, required: false, input_html: {id: "range_end", class: "d-none"} %>
+        <%= f.input :number_bikes %>
+        <%= f.submit 'Submit', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+  
+<div
+  id="contract-form-div"
+  data-contracts="<%= @contracts_dates.to_json %>"
+>
 
-  <%= link_to "Back to boxes list", boxbikes_path %> |
-  <br>
-  <%= link_to "Back to Home", root_path  %> |
-  <br>
-
-  <% if policy(@boxbike).edit? %>
-    <%= link_to "Edit your Bikebox", edit_boxbike_path(@boxbike)  %>
-  <% end %>
-
-  <br>
-  <% if policy(@boxbike).destroy? %>
-  <%= link_to "Delete", boxbike_path(@boxbike), method: :delete, data: { confirm: "Are you sure?"} %>
-  <br>
-  <% end %>
+<div>
+  <div>
+    <%= link_to "Back to boxes list", boxbikes_path %>
+    <br>
+    <%= link_to "Back to Home", root_path  %>
+    <br>
+    <% if policy(@boxbike).edit? %>
+      <%= link_to "Edit your Bikebox", edit_boxbike_path(@boxbike)  %>
+    <% end %>
+    <br>
+    <% if policy(@boxbike).destroy? %>
+    <%= link_to "Delete", boxbike_path(@boxbike), method: :delete, data: { confirm: "Are you sure?"} %>
+    <br>
+    <% end %>
+    <br>
+  </div>
 </div>
