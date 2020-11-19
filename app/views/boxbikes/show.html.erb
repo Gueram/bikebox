@@ -12,7 +12,14 @@
          <% else %>
          <%= "No electricity" %>
          <% end %>
+    <li>
+      <div id="map-show"
+          style="width: 100%; height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div></li>
   </ul>
+  
   <br>
   <h2>rent this box</h2>
   <%= simple_form_for [ @boxbike, @contract ] do |f| %>
