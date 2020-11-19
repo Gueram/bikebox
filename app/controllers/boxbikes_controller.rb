@@ -8,7 +8,9 @@ skip_before_action :authenticate_user!, only: :index
     @markers = @boxbikes.geocoded.map do |boxbike|
       {
         lat: boxbike.latitude,
-        lng: boxbike.longitude
+        lng: boxbike.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { boxbike: boxbike }),
+        image_url: helpers.asset_url('marker.png')
       }
     end
   end
@@ -40,6 +42,10 @@ skip_before_action :authenticate_user!, only: :index
         to:   contract.end_date
       }
     end
+    @markers = [{
+      lat: @boxbike.latitude,
+      lng: @boxbike.longitude
+    }]
   end
 
   def edit
