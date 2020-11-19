@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Boxbike details</h1>
+  <h1>Bikebox details</h1>
   <ul>
     <li><%= "renter's name: " %><%= @boxbike.user.name %> </li>
     <li><%= "box address: " %><%= @boxbike.address %></li>
@@ -28,7 +28,7 @@
   <br>
 
   <% if policy(@boxbike).edit? %>
-    <%= link_to "Edit your Boxbike", edit_boxbike_path(@boxbike)  %>
+    <%= link_to "Edit your Bikebox", edit_boxbike_path(@boxbike)  %>
   <% end %>
 
   <br>
