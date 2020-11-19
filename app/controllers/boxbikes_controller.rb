@@ -49,6 +49,10 @@ skip_before_action :authenticate_user!, only: :index
     redirect_to boxbikes_path
   end
 
+  # def my_boxbikes
+  #   @boxbikes = Boxbike.where(price: 40)
+  # end
+
   private
 
   def boxbike_params

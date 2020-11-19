@@ -17,7 +17,7 @@ class ContractsController < ApplicationController
     @contract.user = current_user
     authorize @contract
     if @contract.save
-      redirect_to boxbike_contracts_path(@boxbike)
+      redirect_to dashboard_path
     else
       redirect_to boxbike_path(@boxbike)
       flash[:notice] = "Warning, your rental didn't go through, please review the form."

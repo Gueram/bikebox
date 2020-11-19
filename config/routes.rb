@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :contracts, only: [ :index, :new, :create ]
   end
   resources :contracts, only: [ :destroy ]
+  get '/dashboard', to: 'pages#dashboard'
+
+
 end
 
 
