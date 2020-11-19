@@ -13,7 +13,10 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
+    <div class="main-container">
     <%= yield %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    </div>
+    <%= render 'shared/footer' %>
   </body>
 </html>
