@@ -17,18 +17,20 @@
     <% end %>
   </div>
   <div class="tab-pane fade" id="reservations" role="tabpanel" aria-labelledby="profile-tab">
+  <div class="container">
     <% @my_reservations.each do |reservation| %>
       <div class="contract-card">
         <div class="contract-address"><%= reservation.boxbike.address %></div>
         <div class="contract-capacity">Bikes: <%= reservation.number_bikes %></div>
         <div class="contract-price">Price: $<%= reservation.boxbike.price %></div>
         <div class="contract-date">
-          <div class="start"><%= reservation.start_date %></div>
+          <div class="start">From: <%= reservation.start_date %></div>
           <i class=“fas fa-arrows-alt-h”></i>
-          <div class="end"><%= reservation.end_date %></div>
+          <div class="end">To: <%= reservation.end_date %></div>
         </div>
         <div class="contract-action"><%= link_to "Cancel", contract_path(reservation), method: :delete, data: { confirm: "Are you sure?" } %></div>
       </div>
     <% end %>
+  </div>
   </div>
 </div>

@@ -2,7 +2,7 @@
   background: white;
   margin-bottom: 5px;
   border: thin solid $blue;
-  width: 400px;
+  width: 600px;
 
   .contract-address {
     font-weight: bold;
@@ -11,7 +11,12 @@
   .contract-date {
     display: flex;
     justify-content: space-around;
+    align-items: flex-end;
   }
 
-
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
 }

@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   end
   resources :contracts, only: [ :destroy ]
   get '/dashboard', to: 'pages#dashboard'
-
-
 end
 
 
