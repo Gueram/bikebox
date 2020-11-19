@@ -12,8 +12,14 @@
          <% else %>
          <%= "No electricity" %>
          <% end %>
+    <li>
+      <div id="map-show"
+          style="width: 100%; height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div></li>
   </ul>
-</div>
+
 <div>
   <div class="container">
     <div class="form-wrapper">
@@ -30,9 +36,7 @@
   
 <div
   id="contract-form-div"
-  data-contracts="<%= @contracts_dates.to_json %>"
->
-
+  data-contracts="<%= @contracts_dates.to_json %>">
 <div>
   <div>
     <%= link_to "Back to boxes list", boxbikes_path %>
@@ -49,4 +53,5 @@
     <% end %>
     <br>
   </div>
+</div>
 </div>
