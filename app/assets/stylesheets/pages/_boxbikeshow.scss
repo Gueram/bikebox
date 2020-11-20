@@ -1,0 +1,23 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 16px;
+  height: 400px;
+}
+
+#total-bikes {
+  width: 310px;
+}
+
+.card-category > img {
+  margin-top: 20px;
+  height: 200px;
+  width: 50%;
+  object-fit: cover;
+  display: flex;
+  align-items: center;
+}
+
+#card-category-details {
+  margin: 20px;
+}
