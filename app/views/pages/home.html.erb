@@ -26,9 +26,9 @@
     <% end %>
      </div>
 </div>
-<div class="container" class="home-content">
-  <div class="row justify-content-center">
-    <div>
+<div class="container home-content">
+  <div>
+    <div class="block-text">
       <div class="align-self-center">
         <h2>Why Bikebox ?</h2>
         <p>Finding the <span style="background-color: rgba(0, 180, 216, 0.5); color: white; padding: 5px 9px;">perfect</span> spot to park your bike in the city is a real pain.
@@ -37,17 +37,21 @@
       </div>
       </div>
       <div class="d-inline">
-        <div class="d-flex">
+        <div class="d-flex block-text">
           <div>
             <h2>Don't be this guy</h2>
             <p>Tired of finding your tires stabbed and flat or your seat soiled with pigeon sh*t ?
             Hate to have to check for a nice sheltered parking place to avoid rain, theft, degradation ?
             The perfect parking space is right along the corner, sign-up today to find yours.</p>
           </div>
-          <%= image_tag 'bike-lamp.jpg', alt:'bike-lamp', width:'365.3px', height:'365.3px' %>
+          <div class="img-bike">
+            <%= image_tag 'bike-lamp.jpg', alt:'bike-lamp', style:"max-width:100%; max-height:100%" %>
+          </div>
         </div>
         <div class="d-flex">
-          <%= image_tag 'kim.gif', alt:'kim-gif', width:'50%' %>
+          <div class="img-kim photo-home">
+            <%= image_tag 'kim.gif', alt:'kim-gif', width:'100%' %>
+          </div>
           <div>
             <h2>Want to make money ?</h2><br>
             <p>Bikebox lets you easily rent your box to bikers to get that sweet <span style="background-color:rgba(0, 180, 216, 0.5); color: white; padding: 5px 9px;">moulaga</span>.
@@ -56,6 +60,8 @@
         </div>
       </div>
       <br>
-    <%= link_to "See our boxes to rent", boxbikes_path, class: "btn btn-flat" %>
+    <div class="text-center">
+      <%= link_to "See our boxes to rent", boxbikes_path, class: "btn btn-bottom" %>
+    </div>
   </div>
 </div>

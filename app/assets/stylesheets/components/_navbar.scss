@@ -94,3 +94,18 @@
     background: #00b4d8;
   }
 }
+
+.btn-bottom {
+  color: white;
+  padding: 8px 24px;
+  margin-right: 10px;
+  border-radius: 4px;
+  background: #00b4d8;
+  transition: background 0.3s ease;
+  align-items: center;
+}
+
+.btn-bottom:hover {
+  background: #0077B6;
+  color: white;
+}
