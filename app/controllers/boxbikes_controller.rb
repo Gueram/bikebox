@@ -3,7 +3,12 @@ skip_before_action :authenticate_user!, only: :index
 
   def index
     @boxbikes = policy_scope(Boxbike).order(created_at: :desc)
-    @boxbikes = @boxbikes.where.not(latitude: nil, longitude: nil)
+    # @boxbikes = @boxbikes.where.not(latitude: nil, longitude: nil)
+    if params[:query].present?
+      @boxbikes = Boxbike.near(params[:query], 10)
+    else
+      @boxbikes = @boxbikes.where.not(latitude: nil, longitude: nil)
+    end
 
     @markers = @boxbikes.geocoded.map do |boxbike|
       {

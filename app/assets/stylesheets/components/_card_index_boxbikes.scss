@@ -46,3 +46,23 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.container-boxe {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+
+}
+
+.my-container {
+  width: 90%;
+  margin: 0 auto;
+
+  .card-product {
+    margin-right: 10px;
+  }
+
+
+}
+
+

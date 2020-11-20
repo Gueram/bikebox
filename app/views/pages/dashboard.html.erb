@@ -8,27 +8,40 @@
     <a class="nav-link" id="reservations-tab" data-toggle="tab" href="#reservations" role="tab" aria-controls="reservations" aria-selected="false">Reservations</a>
   </li>
 </ul>
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="boxes" role="tabpanel" aria-labelledby="boxes-tab">
-    <% @my_boxes.each do |boxe| %>
-    <div class="boxe-card">
-      <li> <%= boxe.address %> - <%= boxe.contracts.length %> reservations </li>
-    </div>
-    <% end %>
-  </div>
-  <div class="tab-pane fade" id="reservations" role="tabpanel" aria-labelledby="profile-tab">
-    <% @my_reservations.each do |reservation| %>
-      <div class="contract-card">
-        <div class="contract-address"><%= reservation.boxbike.address %></div>
-        <div class="contract-capacity">Bikes: <%= reservation.number_bikes %></div>
-        <div class="contract-price">Price: $<%= reservation.boxbike.price %></div>
-        <div class="contract-date">
-          <div class="start"><%= reservation.start_date %></div>
-          <i class=“fas fa-arrows-alt-h”></i>
-          <div class="end"><%= reservation.end_date %></div>
-        </div>
-        <div class="contract-action"><%= link_to "Cancel", contract_path(reservation), method: :delete, data: { confirm: "Are you sure?" } %></div>
+
+<div class="my-container">
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="boxes" role="tabpanel" aria-labelledby="boxes-tab">
+      <div class="container-boxe">
+      <% @my_boxes.each do |boxe| %>
+      <div class="card-product">
+        <img src="https://source.unsplash.com/1600x900/?bike/weekly" />
+        <div class="card-product-infos">
+
+      <!-- <div class="boxe-card"> -->
+        <p> <%= boxe.address %> - <strong> <%= boxe.contracts.length %> reservations</strong> </p>
       </div>
-    <% end %>
+      </div>
+      <% end %>
+      </div>
+    </div>
+    <div class="tab-pane fade" id="reservations" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="container-reservation">
+      <% @my_reservations.each do |reservation| %>
+        <div class="contract-card">
+          <div class="contract-address"><%= reservation.boxbike.address %></div>
+          <div class="contract-capacity">Bikes: <%= reservation.number_bikes %></div>
+          <div class="contract-price">Price: €<%= reservation.boxbike.price %></div>
+          <div class="contract-date">
+            <div class="start"><%= reservation.start_date %></div>
+            <i class=“fas fa-arrows-alt-h”></i>
+            <div class="end"><%= reservation.end_date %></div>
+          </div>
+          <div class="contract-action"><%= link_to "Cancel", contract_path(reservation), method: :delete, data: { confirm: "Are you sure?" } %></div>
+        </div>
+      <% end %>
+      </div>
+    </div>
   </div>
 </div>

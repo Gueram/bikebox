@@ -28,7 +28,7 @@ class ContractsController < ApplicationController
     authorize @contract
     @boxbike = @contract.boxbike
     @contract.destroy
-    redirect_to boxbike_contracts_path(@boxbike)
+    redirect_to dashboard_path
   end
 
   private

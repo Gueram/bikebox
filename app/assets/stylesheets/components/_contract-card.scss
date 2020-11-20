@@ -2,7 +2,7 @@
   background: white;
   margin-bottom: 5px;
   border: thin solid $blue;
-  width: 400px;
+  width: 500px;
 
   .contract-address {
     font-weight: bold;
@@ -13,5 +13,13 @@
     justify-content: space-around;
   }
 
+}
+
+.container-reservation {
+
+  .contract-card {
+    margin-right: 10px;
+    margin-top: 10px;
+  }
 
 }
