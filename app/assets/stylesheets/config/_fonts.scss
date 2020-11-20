@@ -6,15 +6,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 // Define fonts for body and headers
 // $body-font: "Work Sans", "Helvetica", "sans-serif";
 // $headers-font: "Nunito", "Helvetica", "sans-serif";
 // $headers-font: "Dosis", "sans-serif";
 // $headers-font: "Abril Fatface", cursive;
+// $body-font: "Karla", sans-serif;
+// $headers-font: 'Yeseva One', cursive;
+// $headers-font: "Dosis", sans-serif;
+// $headers-font: "Abril Fatface", cursive;
+// $headers-font: "Bree Serif", serif;
 
-$body-font: "Karla", sans-serif;
+$body-font: 'Mulish', sans-serif;
 $headers-font: 'Yeseva One', cursive;
+
+
+
+
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {

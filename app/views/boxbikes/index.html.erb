@@ -7,7 +7,8 @@
         <!-- <a href="/cocktails/1">Mojito</a> -->
       <!-- </div> -->
             <%#= image_tag "https://source.unsplash.com/weekly?water" %>
-              <img src="https://source.unsplash.com/1600x900/?bike/weekly" />
+              <%= image_tag "https://source.unsplash.com/weekly?bike#{boxbike.id}" %>
+              <%#= render "shared/index_card_image" %>
               <div class="card-product-infos">
                 <h2><%= link_to boxbike.address, boxbike_path(boxbike) %></h2>
                 <p><%= link_to boxbike.user.name, dashboard_path(boxbike) %></p>
@@ -21,4 +22,3 @@
   </div>
  </div>
 </div>
-

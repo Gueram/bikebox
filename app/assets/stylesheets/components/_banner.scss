@@ -10,8 +10,14 @@
   margin-bottom: 32px;
   background-position: bottom;
     a {
-      color: white;
+      color: #00b4d8;
       font-size: 20px;
+      text-decoration: none;
+      font-family: 'Yeseva One', cursive;
+       &:hover {
+         color: white;
+         text-decoration: none;
+       }
     }
 }
 .banner h1 {
@@ -25,4 +31,8 @@
   color: rgb(255, 255, 255);
   opacity: 0.8;
   margin-bottom: 30px;
+}
+
+.link-to-index {
+
 }
