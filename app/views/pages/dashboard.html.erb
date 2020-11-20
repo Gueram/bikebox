@@ -1,19 +1,15 @@
-
-
 <ul class="nav nav-tabs" id="myTab" role="tablist">
   <li class="nav-item">
-    <a class="nav-link active" id="reservations-tab" data-toggle="tab" href="#reservations" role="tab" aria-controls="reservations" aria-selected="true">Reservations</a>
+    <a class="nav-link active" id="reservations-tab" data-toggle="tab" href="#reservations" role="tab" aria-controls="reservations" aria-selected="true">reservations</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id="boxes-tab" data-toggle="tab" href="#boxes" role="tab" aria-controls="boxes" aria-selected="false">Boxes</a>
+    <a class="nav-link" id="boxes-tab" data-toggle="tab" href="#boxes" role="tab" aria-controls="boxes" aria-selected="false">boxes</a>
   </li>
 </ul>
-
 <div class="my-container">
-
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show-active" id="reservations" role="tabpanel" aria-labelledby="reservations-tab">
-       <div class="container-reservation">
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="reservations" role="tabpanel" aria-labelledby="reservations-tab">
+    <div class="container-reservation">
         <% @my_reservations.each do |reservation| %>
           <div class="contract-card">
             <div class="contract-address"><%= reservation.boxbike.address %></div>
@@ -29,8 +25,9 @@
         <% end %>
       </div>
     </div>
-    <div class="tab-pane fade" id="boxes" role="tabpanel" aria-labelledby="boxes-tab">
-      <div class="container-boxe">
+
+  <div class="tab-pane fade" id="boxes" role="tabpanel" aria-labelledby="boxes-tab">
+    <div class="container-boxe">
       <% @my_boxes.each do |boxe| %>
       <div class="card-product">
         <%= image_tag "https://source.unsplash.com/weekly?bike#{boxe.id}" %>
@@ -42,8 +39,26 @@
       </div>
       <% end %>
       </div>
-    </div>
-      <div id="home-link"><%= link_to "Back to boxes list", boxbikes_path %></div>
   </div>
+      <div id="home-link"><%= link_to "Back to boxes list", boxbikes_path %></div>
 </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
