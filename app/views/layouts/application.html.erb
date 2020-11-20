@@ -6,6 +6,7 @@
     <title>Bikebox</title>
     <%= csp_meta_tag %>
     <%= csrf_meta_tags %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application' %> <!-- ajout pour flatpickr -->
   </head>
@@ -15,7 +16,7 @@
     <%= render 'shared/flashes' %>
     <div class="main-container">
     <%= yield %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    
     </div>
     <%= render 'shared/footer' %>
   </body>

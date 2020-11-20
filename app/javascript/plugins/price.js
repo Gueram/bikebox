@@ -24,16 +24,17 @@ const price = () => {
   const endDate = document.getElementById("range_end");
   const totalBikesString = document.getElementById("total-bikes");
 
-
+  if (startDate) {
   [startDate, endDate].forEach(date => {
     date.addEventListener("change", (event) => {
       dynamicPrice(startDate, endDate, totalBikesString);
     });
   })
-
+ 
   totalBikesString.addEventListener("input", (event) => {
     dynamicPrice(startDate, endDate, totalBikesString);
   });
+  }
 };
 
 export { price };
