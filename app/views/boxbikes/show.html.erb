@@ -20,7 +20,6 @@
       <div class="card-category">
       <img src="https://images.unsplash.com/photo-1467840090898-5b940a807822?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80" />
       </div>
-
       <div id="map" class="card-category" style="height: 230px; width: 310px"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -52,7 +51,6 @@
     <% end %>
  </div>
 </div>
-
 <div class="container">
   <div class="index-content d-flex">
     <div class="col-7">
@@ -73,9 +71,6 @@
       </div>
     </div>
   </div>
-
-
-
 <div
   id="contract-form-div"
   data-contracts="<%= @contracts_dates.to_json %>">
