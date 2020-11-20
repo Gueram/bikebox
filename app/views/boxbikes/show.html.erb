@@ -18,7 +18,7 @@
         </ul>
       </div>
       <div class="card-category">
-      <img src="https://s2.qwant.com/thumbr/0x380/7/7/954c8613cad86c78d9253165d2f2d832274a85792f497795bb0aeab75d6d87/Bike-Lockers-1024x819.jpg?u=https%3A%2F%2Fwww.zaun.co.uk%2Fmedia%2F2014%2F07%2FBike-Lockers-1024x819.jpg&q=0&b=1&p=0&a=1" />
+      <img src="https://images.unsplash.com/photo-1467840090898-5b940a807822?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80" />
       </div>
 
       <div id="map" class="card-category" style="height: 230px; width: 310px"
@@ -57,13 +57,13 @@
   <div class="index-content d-flex">
     <div class="col-7">
       <div class="card-category" id="card-category">
-        <div>
+        <div class="d-flex">
           <%= link_to "Back to boxes list", boxbikes_path %>
-          <br>
+          <p class="mx-2 color-pipe"> | </p>
           <% if policy(@boxbike).edit? %>
             <%= link_to "Edit your Bikebox", edit_boxbike_path(@boxbike)  %>
           <% end %>
-          <br>
+           <p class="mx-2 color-pipe"> | </p>
           <% if policy(@boxbike).destroy? %>
           <%= link_to "Delete your Bikebox", boxbike_path(@boxbike), method: :delete, data: { confirm: "Are you sure?"} %>
           <br>
@@ -80,6 +80,6 @@
   id="contract-form-div"
   data-contracts="<%= @contracts_dates.to_json %>">
 <div>
-  
+
 </div>
 </div>
