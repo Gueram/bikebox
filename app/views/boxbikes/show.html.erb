@@ -3,17 +3,17 @@
     <div class="col-7">
       <div class="card-category" id="card-category">
         <h2>Bikebox details</h2>
+        <br>
         <ul>
           <li><strong>Bike host : </strong><%= @boxbike.user.name %> </li>
-          <li><%= "Box address: " %><%= @boxbike.address %></li>
-          <li><%= "Capacity: " %><%= @boxbike.capacity %></li>
-          <li><%= "Spots left: " %><%= @boxbike.spots_left %></li>
-          <li><%= "Base price per bike: " %><%= @boxbike.price %> €</li>
-          <li>Price per spot : </li>
+          <li><strong>Box address : </strong><%= @boxbike.address %></li>
+          <li><strong>Capacity : </strong><%= @boxbike.capacity %></li>
+          <li><strong>Spots left : </strong><%= @boxbike.spots_left %></li>
+          <li><strong>Price /bike for a day : </strong><%= @boxbike.price %> €</li>
           <li> <% if @boxbike.charge_option%>
-              <%= "Charge available" %>
+              <%= "Electrical charge available" %>
               <% else %>
-              <%= "Charge not available" %>
+              <%= "Electrical charge not available" %>
               <% end %>
         </ul>
       </div>
@@ -21,7 +21,7 @@
       <img src="https://s2.qwant.com/thumbr/0x380/7/7/954c8613cad86c78d9253165d2f2d832274a85792f497795bb0aeab75d6d87/Bike-Lockers-1024x819.jpg?u=https%3A%2F%2Fwww.zaun.co.uk%2Fmedia%2F2014%2F07%2FBike-Lockers-1024x819.jpg&q=0&b=1&p=0&a=1" />
       </div>
 
-      <div id="map" class="card-category" style="height: 150px; width: 150px"
+      <div id="map" class="card-category" style="height: 230px; width: 310px"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
@@ -31,10 +31,11 @@
         <div class="card-category">
           <div class="form-wrapper">
             <h2>Book a bikebox</h2>
+            <br>
             <%= simple_form_for [ @boxbike, @contract ] do |f| %>
               <%= f.input  :start_date, label: "Select your dates:", as: :string, required: false, input_html: {id: "range_start", class: "d-none"} %>
               <%= f.input  :end_date, label: false, as: :string, required: false, input_html: {id: "range_end", class: "d-none"} %>
-              <%= f.input  :number_bikes, collection: 1..10, input_html: {id: "total-bikes"} %>
+              <%= f.input  :number_bikes, collection: 1..@boxbike.spots_left, input_html: {id: "total-bikes"} %>
               <%= f.submit 'Submit', class: 'btn btn-primary' %>
             <% end %>
             <br>
