@@ -5,6 +5,10 @@ const initAutocomplete = () => {
   if (addressInput) {
     places({ container: addressInput });
   }
+  const addressInputCreate = document.getElementById("boxbike_address");
+  if (addressInputCreate) {
+    places({ container: addressInputCreate });
+  }
 };
 
-export { initAutocomplete };
+export { initAutocomplete};
