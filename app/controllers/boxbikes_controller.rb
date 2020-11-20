@@ -3,7 +3,6 @@ skip_before_action :authenticate_user!, only: :index
 
   def index
     @boxbikes = policy_scope(Boxbike).order(created_at: :desc)
-    # @boxbikes = @boxbikes.where.not(latitude: nil, longitude: nil)
     if params[:query].present?
       @boxbikes = Boxbike.near(params[:query], 10)
     else
@@ -76,10 +75,6 @@ skip_before_action :authenticate_user!, only: :index
     @boxbike.destroy
     redirect_to boxbikes_path
   end
-
-  # def my_boxbikes
-  #   @boxbikes = Boxbike.where(price: 40)
-  # end
 
   private
 

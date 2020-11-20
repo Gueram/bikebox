@@ -1,23 +1,3 @@
-<!-- <div class="container">
-  <div class="index-content d-flex">
-    <div class="col-6">
-      <#% @boxbikes.each do |boxbike| %>
-        <div class="card-product">
-          <%#= image_tag "https://source.unsplash.com/weekly?bike#{boxbike.id}" %>
-          <div class="card-product-infos">
-            <h2><#%= link_to boxbike.address, boxbike_path(boxbike) %></h2>
-            <p><#%= link_to boxbike.user.name, dashboard_path(boxbike) %></p>
-          </div>
-        </div>
-      <#% end %>
-    </div>
-  </div>
-  <div id="map" class="col-6"
-    data-markers="<#%= @markers.to_json %>"
-    data-mapbox-api-key="<%#= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>
- -->
 <div class="container">
   <div class="index-content d-flex">
     <div class="col-6">
