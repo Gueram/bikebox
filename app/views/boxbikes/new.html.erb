@@ -1,22 +1,22 @@
 <div class="container">
-  <h2>Offer a Bikebox</h2>
+  <div class="bikebox-form">
+    <h2>Offer a Bikebox</h2>
 
-  <%= simple_form_for [ @user, @boxbike ] do |f| %>
-    <%= f.input :address %>
-    <%= f.label :capacity %>
-    <%= f.number_field :capacity %>
-    <%= f.label :price %>
-    <%= f.number_field :price %>
+    <%= simple_form_for [ @user, @boxbike ] do |f| %>
+      <%= f.input :address %>
+      <%= f.label :capacity %>
+      <%= f.select :capacity, ["1", "2", "3", "4", "5"] %>
+      <%= f.label :price, "Price (€)" %>
+      <%= f.number_field :price %>
+      <br>
+      <strong><%= f.label :charge_option, "Does your Bikebox have an electric charger?:" %></strong>
+      <%= f.select :charge_option, ["No", "Yes"] %>
+      <br>
+      <%= f.submit 'Submit', class: 'btn btn-primary' %>
+    <% end %>
     <br>
-    <strong><%= f.label :charge_option, "Does your Bikebox have an electric charger?:" %></strong>
-    <%= f.select :charge_option, ["No", "Yes"] %>
+    <%= link_to "Back to boxes list", boxbikes_path %>
     <br>
-    <%= f.submit 'Submit', class: 'btn btn-primary' %>
-  <% end %>
-  <br>
-  <%= link_to "Back to boxes list", boxbikes_path %>
-  <br>
-  <%= link_to "Back to Home", root_path  %>
+    <%= link_to "Back to Home", root_path  %>
+  </div>
 </div>
-
-
