@@ -37,3 +37,11 @@ h2 {
 .block-text {
   margin-bottom: 100px;
 }
+
+.underline {
+    background-image: linear-gradient(120deg, #00b4d8 0%, #00b4d8 0%);
+    background-repeat: no-repeat;
+    background-size: 100% 0.5em;
+    background-position-x: 15px;
+    background-position-y: 90%;
+  }
