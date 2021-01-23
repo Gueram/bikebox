@@ -1,5 +1,5 @@
 class BoxbikesController < ApplicationController
-skip_before_action :authenticate_user!, only: :index
+skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @boxbikes = policy_scope(Boxbike).order(created_at: :desc)
